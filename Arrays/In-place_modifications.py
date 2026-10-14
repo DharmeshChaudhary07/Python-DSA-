@@ -23,6 +23,7 @@
 
 # # Move all zeroes to the end, keep relative order of non-zeroes
 
+arr = [0,1,0,3,5,6,0,9]
 def move_zeroes(arr):
     insert_pos = 0
     for i in range(len(arr)):
@@ -31,9 +32,13 @@ def move_zeroes(arr):
             insert_pos += 1
     return arr
 
+print(move_zeroes(arr))
+
 # -----------------------------------------
 
 # Reverse array in place
+
+arr = [1,3,6,7,9,0,3]
 def reverse(arr):
     left, right = 0, len(arr) - 1
     while left < right:
@@ -42,9 +47,13 @@ def reverse(arr):
         right -= 1
     return arr
 
+print(reverse(arr))
+
 # -----------------------------------------
 
 # # Rotate array right by k steps - reverse trick (O(n) time, O(1) space)
+
+arr = [3,6,8,1,5,9,0,3]
 def rotate(arr, k):
     n = len(arr)
     k %= n
@@ -58,9 +67,15 @@ def reverse_range(arr, i, j):
         i += 1
         j -= 1
 
+rotate(arr, 4)
+print(arr)
+
+
 # -----------------------------------------
 
 # # Dutch National Flag - sort array of 0s, 1s, 2s in one pass
+
+arr = [0,1,3,1,0,2,0,1,1]
 def sort_colors(arr):
     low, mid, high = 0, 0, len(arr) - 1
     while mid <= high:
@@ -73,7 +88,9 @@ def sort_colors(arr):
         else:  # arr[mid] == 2
             arr[mid], arr[high] = arr[high], arr[mid]
             high -= 1  # don't increment mid here - swapped value unchecked
+    return arr
 
+print(sort_colors(arr))
 
 
 # Time: O(n) for all above. Space: O(1) — this is the entire point of “in-place”.
