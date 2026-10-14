@@ -1,4 +1,9 @@
 
+# -----------------------# -----------------------# -----------------------# -----------------------# -----------------------
+#                                           Rough work (leetcode and shit)
+# -----------------------# -----------------------# -----------------------# -----------------------# -----------------------
+
+
 
 # Input: nums = [1,7,3,6,5,6]
 # Output: 3
@@ -43,3 +48,30 @@
 #         return nums
 
 # print(moveZeroes(nums))
+
+
+
+
+# ----------------------- 
+
+# Remove element
+
+
+# Brute force
+
+def removeElement(nums: list[int], val: int) -> int:
+    temp = []
+        
+    for num in nums:
+        if num != val:
+            temp.append(num)
+
+    for i in range(len(temp)):
+        nums[i] = temp[i]
+
+    return len(temp)
+
+    # return nums       # output -> [2, 2, 2, 3], its still holding last two index (2, 3) values. 
+
+
+print(removeElement([3,2,2,3],3))
