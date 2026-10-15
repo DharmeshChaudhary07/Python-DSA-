@@ -49,7 +49,7 @@ def first_unique(s):               # first character that appears once
             return i
     return -1
 
-print(first_unique("compressors"))
+print(first_unique("compressorsc"))
 
 # --------------------------------------------
 
@@ -61,7 +61,7 @@ def is_anagram(s, t):
     return Counter(s) == Counter(t)
 
 print(is_anagram("compressors","comp"))
-print(is_anagram("comp","comp"))
+print(is_anagram("come","comp"))
 
 # # --------------------------------------------
 
