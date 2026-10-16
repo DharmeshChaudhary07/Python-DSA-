@@ -59,19 +59,39 @@
 
 # Brute force
 
-def removeElement(nums: list[int], val: int) -> int:
-    temp = []
+# def removeElement(nums: list[int], val: int) -> int:
+#     temp = []
         
-    for num in nums:
-        if num != val:
-            temp.append(num)
+#     for num in nums:
+#         if num != val:
+#             temp.append(num)
 
-    for i in range(len(temp)):
-        nums[i] = temp[i]
+#     for i in range(len(temp)):
+#         nums[i] = temp[i]
 
-    return len(temp)
+#     return len(temp)
 
-    # return nums       # output -> [2, 2, 2, 3], its still holding last two index (2, 3) values. 
+#     # return nums       # output -> [2, 2, 2, 3], its still holding last two index (2, 3) values. 
 
 
-print(removeElement([3,2,2,3],3))
+# print(removeElement([3,2,2,3],3))
+
+# ----------------------- 
+
+#  26. Remove Duplicates from Sorted Array
+
+class Solution:
+    def removeDuplicates(self, nums: list[int]) -> int:
+        temp = []
+        for num in nums:
+            if num not in temp:
+                temp.append(num)
+        
+        for i in range(len(temp)):
+            nums[i] = temp[i]
+        
+        return len(temp)
+
+sol = Solution()
+nums = [0,0,1,1,1,2,2,3,3,4]
+print(sol.removeDuplicates(nums))
