@@ -8,6 +8,7 @@
 
 #----------------------------
 
+chars = list("Muller")
 def reverse_string(chars):           # LeetCode gives a list of characters
     l, r = 0, len(chars) - 1
     while l < r:
@@ -15,8 +16,12 @@ def reverse_string(chars):           # LeetCode gives a list of characters
         l += 1
         r -= 1
 
+    return chars
+print(reverse_string(chars))
+
 # ----------------------------
 
+s = "boby"
 def is_palindrome(s):                # ignore non-alphanumerics, ignore case
     l, r = 0, len(s) - 1
     while l < r:
@@ -29,6 +34,9 @@ def is_palindrome(s):                # ignore non-alphanumerics, ignore case
         l += 1
         r -= 1
     return True
+
+print(is_palindrome(s))
+
 
 # ​----------------------------------------------------------------------------------------------------------------
 
