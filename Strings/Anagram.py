@@ -10,15 +10,19 @@
 
 # --------------------------
 
+
 from collections import Counter, defaultdict
+strs = 'luka'
 def group_anagrams(strs):                   # key = sorted letters
     groups = defaultdict(list)
     for s in strs:
         groups[tuple(sorted(s))].append(s)
     return list(groups.values())
+print(group_anagrams(strs))
 
 # --------------------------
 
+strs = ["modric"]
 def group_anagrams_count_key(strs):         # key = 26 counts (faster for long words)
     groups = defaultdict(list)
     for s in strs:
@@ -28,7 +32,12 @@ def group_anagrams_count_key(strs):         # key = 26 counts (faster for long w
         groups[tuple(count)].append(s)      # lists can't be keys, tuples can
     return list(groups.values())
 
+print(group_anagrams_count_key(strs))
+
 # --------------------------
+
+s = "muller"
+p = "ll"
 
 def find_anagrams(s, p):                    # start indices of anagrams of p in s
     if len(p) > len(s):
@@ -45,6 +54,8 @@ def find_anagrams(s, p):                    # start indices of anagrams of p in 
         if window == need:
             result.append(i - len(p) + 1)
     return result
+
+print(find_anagrams(s, p))
 
 # --------------------------
 
