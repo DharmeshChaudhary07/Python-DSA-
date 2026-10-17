@@ -10,6 +10,9 @@
 
 # -------------------------------
 
+# converts a string into an integer.
+# read only valid number, if s = bob77, bob no is 77 or bob -> return 0 
+s = "77"
 def my_atoi(s):
     i, n = 0, len(s)
     while i < n and s[i] == ' ':              # 1) skip spaces
@@ -25,17 +28,30 @@ def my_atoi(s):
     result *= sign
     return max(-2**31, min(2**31 - 1, result))   # 4) clamp to 32-bit range
 
+print(my_atoi(s))
+
 # -------------------------------
 
+s = "luka modric"
 def reverse_words(s):
     return " ".join(reversed(s.split()))      # split() handles extra spaces
 
+print(reverse_words(s))
+
+
+# -------------------------------
+
+
+strs = ['fl', 'flag', 'flower']
 def longest_common_prefix(strs):              # vertical scan: column by column
     for i in range(len(strs[0])):
         for s in strs[1:]:
             if i == len(s) or s[i] != strs[0][i]:
                 return strs[0][:i]
     return strs[0]
+
+print(longest_common_prefix(strs))
+
 
 # ----------------------------------------------------------------------------------------------------------------------------
 
