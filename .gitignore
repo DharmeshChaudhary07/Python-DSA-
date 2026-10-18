@@ -1,5 +1,4 @@
 # Ignore markdown and PDF files in the main folder and all subfolders
-**/*.md
 **/*.pdf
 
 # ignore DS_store
