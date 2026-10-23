@@ -1,7 +1,7 @@
 # ---------------------------------------------- Hashing Sets and Duplicates -----------------------------------------------
 # --------------------------------------------------------------------------------------------------------------------------
 
-# A set answers one question in O(1): “have I seen this before?” Walk through the data once, check the set, then add to it.
+# Core concept ->  A set answers one question in O(1): “have I seen this before?” Walk through the data once, check the set, then add to it.
 # This replaces a nested loop (O(n²)) with a single pass (O(n)).
 
 # Set operators: `a & b` (in both), `a | b` (in either), `a - b` (in a but not b).
@@ -9,20 +9,23 @@
 
 
 
-# Approach: Ask “what do I need to remember from the past?” If the answer is only “which values appeared”, use a set. If you also need a count or a position, use a dict (Day 2 and Day 5).
+# Approach: Ask “what do I need to remember from the past?” If the answer is only “which values appeared”, use a set.
+#  If you also need a count or a position, use a dict (Day 2 and Day 5).
 
-# Common mistakes: adding to the set before checking (everything looks like a duplicate); using a list for `seen`; forgetting that `set(a)` drops duplicates.
+# Common mistakes: adding to the set before checking (everything looks like a duplicate); using a list for `seen`; 
+# forgetting that `set(a)` drops duplicates.
 
-# Recognize the pattern: duplicate, appears twice, common elements, unique values, “have I seen this”, a process that may repeat a state (Happy Number: what must happen if it never reaches 1?).
+# Recognize the pattern: duplicate, appears twice, common elements, unique values, “have I seen this”, a process that may 
+# repeat a state (Happy Number: what must happen if it never reaches 1?).
 
-# ### Practice first (do these 4 before the plan problems)
+# # Practice first (do these 4 before the plan problems)
 
 # 1. Single Number (#136)
 # 2. Missing Number (#268)
 # 3. Set Mismatch (#645)
 # 4. Distribute Candies (#575)
 
-# --------------------------------------------------------------------------------------------------------------------------
+    # --------------------------------------------------------------------------------------------------------------------------
 
 # first value that appears a second time
 
