@@ -9,6 +9,7 @@
 # Consistent mapping (needed for Isomorphic Strings): every character must always map to the same partner. 
 # If two different characters may not share a partner, you must also check the reverse direction. Think of two dicts, one per direction.
 
+# ------------------------------------------------------
 
 # Approach: Count first, decide second. For “more than n/2”, the count map is step one; step two is what you compare each count against. 
 # For mapping problems, ask “can two different things map to the same thing?”
@@ -16,9 +17,9 @@
 # Common mistakes: `count[x] += 1` on a plain dict without initializing; forgetting the length check when comparing two strings; 
 # checking a mapping in one direction only.
 
-
 # Recognize the pattern: most or least frequent, majority, “enough of each”, anagram, “same pattern”.
 
+# ------------------------------------------------------
 
 # ### Practice first (do these 4 before the plan problems)
 
