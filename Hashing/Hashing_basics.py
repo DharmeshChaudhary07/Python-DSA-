@@ -9,7 +9,6 @@
 # DE link: dict is GROUP BY, set is DISTINCT, and a lookup in a dict is a hash join.
 
 
-
 # # Important points to remember
 
 # 1. Collision: two keys land in the same bucket. Python handles it internally. 
