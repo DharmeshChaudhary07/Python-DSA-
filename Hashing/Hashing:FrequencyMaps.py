@@ -77,3 +77,42 @@ def can_build(target, source):             # does source have enough of each ite
     return True                            # return True means every item passed the check, so building is possible.
 
 print(can_build(target, source))
+
+
+# ---------------------------------
+
+# s = "egg"
+# t = "add"
+s = "f11"
+t = "b23"
+
+class Solution:
+    def isIsomorphic(self, s: str, t: str) -> bool:
+        if len(s) != len(t):
+            return False
+        s_to_t = {}
+        t_to_s = {}
+        for a, b in zip(s, t):
+            if a in s_to_t and s_to_t[a] != b:
+                return False
+            if b in t_to_s and t_to_s[b] != a:
+                return False
+            s_to_t[a] = b
+            t_to_s[b] = a
+        return True
+
+sol = Solution()
+print(sol.isIsomorphic(s,t))
+
+
+
+
+# How it works
+
+# If the lengths differ, they can’t match one-to-one, so return False.
+# s_to_t remembers which character in t each character in s maps to. t_to_s remembers the reverse.
+# zip(s, t) gives the pairs (a, b), one position at a time.
+# a in s_to_t and s_to_t[a] != b means a was mapped before to something different, so return False.
+# b in t_to_s and t_to_s[b] != a means b was already taken by a different character, so return False.
+# If both checks pass, store the pair in both dicts.
+# If no pair failed, return True.
