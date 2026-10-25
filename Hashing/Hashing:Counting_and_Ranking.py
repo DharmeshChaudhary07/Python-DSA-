@@ -69,7 +69,7 @@ def group_by(items, make_key):
 print(group_by(items, make_key))
 
 # group_by(words, len)  -> groups of words with the same length
-# make_key can return a str, an int or a tuple (never a list)
+# make_key can return a str, an int or a tuple (never a list). its just a function that return group label
 
 # creating a plain {} raises KeyError here.
 # Why: groups[key].append(item) does two things in order:
