@@ -71,6 +71,11 @@ print(group_by(items, make_key))
 # group_by(words, len)  -> groups of words with the same length
 # make_key can return a str, an int or a tuple (never a list)
 
+# creating a plain {} raises KeyError here.
+# Why: groups[key].append(item) does two things in order:
+# groups[key] reads the value for that key.
+# .append(item) adds to whatever the read returned.
+
 # item	    key	    groups after
 # cat	    3	    {3: [cat]}
 # dog	    3	    {3: [cat, dog]}
