@@ -37,3 +37,44 @@
 
 
 # ----------------------------------------------------------------------------------------------------------------------------
+
+
+from collections import Counter, defaultdict
+
+items = [1,2,4,5,1,3,4,3,3,3,5,6]
+def sorted_by_count(items):
+    count = Counter(items)                                     # count = Counter(items) counts each value:{1: 2, 2: 1, 4: 2, 5: 2, 3: 4, 6: 1}
+    return sorted(count.items(), key=lambda p: p[1], reverse=True)
+
+print(sorted_by_count(items))
+
+# count.items() gives the pairs (1,2), (2,1), (4,2), (5,2), (3,4), (6,1).
+# sorted(..., key=lambda p: p[1], reverse=True) sorts those pairs:
+# p is one pair, like (3, 4).
+# p[1] is its count, so key tells sorted to compare by count instead of by value.
+# reverse=True puts the biggest count first.
+
+
+# ----------------------------------
+
+items = ["cat", "dog", "bird", "fish", "ant", "bee"]
+make_key = len
+
+def group_by(items, make_key):
+    groups = defaultdict(list)
+    for item in items:
+        groups[make_key(item)].append(item)
+    return list(groups.values())
+
+print(group_by(items, make_key))
+
+# group_by(words, len)  -> groups of words with the same length
+# make_key can return a str, an int or a tuple (never a list)
+
+# item	    key	    groups after
+# cat	    3	    {3: [cat]}
+# dog	    3	    {3: [cat, dog]}
+# bird	    4	    {3: [cat, dog], 4: [bird]}
+# fish	    4   	{3: [cat, dog], 4: [bird, fish]}
+# ant   	3	    {3: [cat, dog, ant], 4: [bird, fish]}
+# bee	    3	    {3: [cat, dog, ant, bee], 4: [bird, fish]}
