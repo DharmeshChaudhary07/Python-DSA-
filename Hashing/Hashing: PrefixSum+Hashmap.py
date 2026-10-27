@@ -40,4 +40,31 @@
 # 3. Subarray Sums Divisible by K (#974)
 # 4. Count Number of Nice Subarrays (#1248)
 
+# ----------------------------------------------------------------------------------------------------------
+
+def longest_zero_sum(nums):                 # longest subarray with sum 0
+    first_seen = {0: -1}                    # empty prefix, "before index 0"
+    total = 0
+    best = 0
+    for i, x in enumerate(nums):
+        total += x
+        if total in first_seen:
+            best = max(best, i - first_seen[total])
+        else:
+            first_seen[total] = i           # keep the FIRST index only
+    return best
+
+
+# ----------------------------------------- 
+
+def pair_indices(nums, target):             # value -> index lookup (Two Sum style)
+    index_of = {}
+    for i, x in enumerate(nums):
+        need = target - x
+        if need in index_of:
+            return [index_of[need], i]
+        index_of[x] = i
+    return []
+
+
 # ----------------------------------------- 
