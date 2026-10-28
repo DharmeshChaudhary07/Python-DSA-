@@ -80,4 +80,4 @@ def windows_matching(s, p):                 # start indexes of windows that are 
 
 print(windows_matching(s,p))
 
-# -----------------------------------------
+# ----------------------------------------- 
