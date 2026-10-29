@@ -42,6 +42,7 @@
 
 # ----------------------------------------------------------------------------------------------------------
 
+nums = [1, 2, -3, 3, 1, -4]
 def longest_zero_sum(nums):                 # longest subarray with sum 0
     first_seen = {0: -1}                    # empty prefix, "before index 0"
     total = 0
@@ -54,8 +55,12 @@ def longest_zero_sum(nums):                 # longest subarray with sum 0
             first_seen[total] = i           # keep the FIRST index only
     return best
 
+print(longest_zero_sum(nums))
 
 # ----------------------------------------- 
+
+nums = [1, 2, -3, 3, 1, -4]
+target = 5
 
 def pair_indices(nums, target):             # value -> index lookup (Two Sum style)
     index_of = {}
@@ -65,6 +70,8 @@ def pair_indices(nums, target):             # value -> index lookup (Two Sum sty
             return [index_of[need], i]
         index_of[x] = i
     return []
+
+print(pair_indices(nums, target))
 
 
 # ----------------------------------------- 
