@@ -21,4 +21,33 @@
 
 # Recognize the pattern: sorted array + pair or target, palindrome, reverse in place, merge two sorted lists.
 
+
+# # Practice first (do these 4 before the plan problems)
+
+# 1. Reverse String (#344)
+# 2. Reverse Vowels of a String (#345)
+# 3. Valid Palindrome II (#680)
+# 4. Is Subsequence (#392)
+
 # ----------------------------------------- 
+
+def has_pair(sorted_nums, target):        # converging template
+    left, right = 0, len(sorted_nums) - 1
+    while left < right:                   # < not <=, a pair needs 2 different positions
+        s = sorted_nums[left] + sorted_nums[right]
+        if s == target:
+            return True
+        if s < target:
+            left += 1
+        else:
+            right -= 1
+    return False
+
+def mirrored(text):                       # compare ends, move inward
+    left, right = 0, len(text) - 1
+    while left < right:
+        if text[left] != text[right]:
+            return False
+        left += 1
+        right -= 1
+    return True
