@@ -60,3 +60,4 @@ def mirrored(text):                       # compare ends, move inward
     return True
 
 print(mirrored(text))
+
