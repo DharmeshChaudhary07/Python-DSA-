@@ -28,3 +28,17 @@
 # 2. Boats to Save People (#881)
 # 3. Valid Triangle Number (#611)
 # 4. 4Sum (#18)
+
+# --------------------------------------------------
+
+def pairs_for_each_first(nums):            # 3Sum-style skeleton (not a full solution)
+    nums.sort()
+    for i in range(len(nums) - 2):
+        if i > 0 and nums[i] == nums[i - 1]:   # skip duplicate first value
+            continue
+        left, right = i + 1, len(nums) - 1
+        while left < right:
+            # compare nums[i] + nums[left] + nums[right] with the target,
+            # move a pointer, and after a hit skip duplicate left/right values
+            ...
+
