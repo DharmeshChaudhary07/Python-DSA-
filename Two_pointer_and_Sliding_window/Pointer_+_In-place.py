@@ -30,3 +30,23 @@
 # 4. Linked List Cycle (#141)
 
 # ----------------------------------------- 
+
+
+
+def keep_if(nums, keep):                   # read-write template
+    write = 0
+    for read in range(len(nums)):
+        if keep(nums, read, write):        # your rule for “this value stays”
+            nums[write] = nums[read]
+            write += 1
+    return write                           # new length
+
+
+def has_cycle_idea(head):                  # fast/slow on a linked list
+    slow = fast = head
+    while fast and fast.next:
+        slow = slow.next
+        fast = fast.next.next
+        if slow is fast:
+            return True
+    return False
