@@ -39,7 +39,7 @@ def best_fixed(nums, k):                   # fixed window template
     for right in range(k, len(nums)):
         window += nums[right] - nums[right - k]
         best = max(best, window)
-    return best
+    return best 
 
 
 def longest_valid(items):                  # variable window with a set
