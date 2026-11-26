@@ -31,4 +31,25 @@
 # 3. Fruit Into Baskets (#904)
 # 4. Max Consecutive Ones III (#1004)
 
-# ----------------------------------------- 
+# -----------------------------------------     
+
+def best_fixed(nums, k):                   # fixed window template
+    window = sum(nums[:k])
+    best = window
+    for right in range(k, len(nums)):
+        window += nums[right] - nums[right - k]
+        best = max(best, window)
+    return best
+
+
+def longest_valid(items):                  # variable window with a set
+    seen = set()
+    left = best = 0
+    for right, x in enumerate(items):
+        while x in seen:                   # invalid -> shrink
+            seen.remove(items[left])
+            left += 1
+        seen.add(x)
+        best = max(best, right - left + 1)
+    return best
+
