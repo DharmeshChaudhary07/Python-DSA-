@@ -30,4 +30,29 @@
 # 3. Get Equal Substrings Within Budget (#1208)
 # 4. Frequency of the Most Frequent Element (#1838)
     
-    # -------------------------------------------- 
+# -------------------------------------------- 
+
+from collections import Counter
+
+def window_matches(s, p):                  # fixed window + Counter comparison
+    need, window = Counter(p), Counter()
+    for i, ch in enumerate(s):
+        window[ch] += 1
+        if i >= len(p):
+            old = s[i - len(p)]
+            window[old] -= 1
+            if window[old] == 0:
+                del window[old]            # needed so == comparison works
+        if window == need:
+            return True
+    return False
+
+def missing_counter(s, t):                 # “how many still missing” bookkeeping
+    need = Counter(t)
+    missing = len(t)
+    # on adding ch: if need[ch] > 0, missing -= 1; then need[ch] -= 1
+    # on removing ch: need[ch] += 1; if need[ch] > 0, missing += 1
+    return need, missing
+
+
+# -------------------------------------------- 
